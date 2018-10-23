@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_23_214745) do
+ActiveRecord::Schema.define(version: 2018_10_23_215052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2018_10_23_214745) do
     t.string "description"
     t.date "bloom_start"
     t.date "bloom_end"
+  end
+
+  create_table "park_flowers", force: :cascade do |t|
+    t.bigint "parks_id"
+    t.bigint "flowers_id"
+    t.index ["flowers_id"], name: "index_park_flowers_on_flowers_id"
+    t.index ["parks_id"], name: "index_park_flowers_on_parks_id"
   end
 
   create_table "parks", force: :cascade do |t|
@@ -40,5 +47,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_214745) do
     t.index ["parks_id"], name: "index_trails_on_parks_id"
   end
 
+  add_foreign_key "park_flowers", "flowers", column: "flowers_id"
+  add_foreign_key "park_flowers", "parks", column: "parks_id"
   add_foreign_key "trails", "parks", column: "parks_id"
 end
