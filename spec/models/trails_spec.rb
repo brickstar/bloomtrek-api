@@ -17,12 +17,4 @@ RSpec.describe Trail, type: :model do
     it { should belong_to(:park) }
     it { should have_many(:flowers).through(:park) }
   end
-
-  context "instance methods" do
-    describe "#validate_status" do
-      it "displays easy, medium, hard based on blue,green,black,etc difficulty of trail" do
-
-      end
-    end
-  end
 end
