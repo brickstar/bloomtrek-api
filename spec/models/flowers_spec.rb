@@ -10,7 +10,8 @@ RSpec.describe Flower, type: :model do
     it { should validate_presence_of(:bloom_end) }
   end
 
-  context "relationships" do
+  describe "relationships" do
+    it { should have_many(:park_flowers) }
     it { should have_many(:parks).through(:park_flowers) }
   end
 end

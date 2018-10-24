@@ -11,5 +11,6 @@ RSpec.describe Trail, type: :model do
 
   context "relationships" do
     it { should belong_to(:park) }
+    it { should have_many(:flowers).through(:park) }
   end
 end

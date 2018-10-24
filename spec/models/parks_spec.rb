@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Parks, type: :model do
+RSpec.describe Park, type: :model do
   context "validations" do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:latitude) }
