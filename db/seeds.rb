@@ -1,13 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+rhps = ReiHikingProjectService.new
 
 park_1 = Park.new(name:"Castlewood Canyon", latitude: 39.3379, longitude: -104.7512)
+
+rhps.trails(park_1.latitude, park_1.longitude)[:trails].each do |trail|
+  park_1.trails.from_api(trail)
+end
 
 # get("all this stuff from the internet based on park_1.lat and park_1.long").each do |trail|
 #   park_1.trails.create(object_from_get_request)

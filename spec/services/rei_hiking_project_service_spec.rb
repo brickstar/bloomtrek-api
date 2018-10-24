@@ -13,6 +13,12 @@ describe ReiHikingProjectService do
 
           trail = trails[:trails].first
 
+          park_1 = Park.new(name:"Castlewood Canyon", latitude: 39.3379, longitude: -104.7512)
+
+          trails[:trails].each do |trail|
+            park_1.trails.from_api(trail)
+          end
+
           expect(trails).to have_key(:trails)
           expect(trail).to have_key(:id)
           expect(trail).to have_key(:url)
