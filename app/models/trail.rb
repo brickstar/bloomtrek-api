@@ -3,7 +3,11 @@ class Trail < ApplicationRecord
                         :length,
                         :status,
                         :trail_img_url,
-                        :trail_url
+                        :trail_url,
+                        :uid,
+                        :latitude,
+                        :longitude,
+                        :summary
 
   belongs_to :park
   has_many :flowers, through: :park

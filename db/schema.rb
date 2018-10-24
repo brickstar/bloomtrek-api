@@ -38,11 +38,15 @@ ActiveRecord::Schema.define(version: 2018_10_23_215052) do
   end
 
   create_table "trails", force: :cascade do |t|
+    t.integer "uid"
     t.string "difficulty"
     t.float "length"
     t.integer "status"
     t.string "trail_img_url"
     t.string "trail_url"
+    t.string "summary"
+    t.float "latitude"
+    t.float "longitude"
     t.bigint "park_id"
     t.index ["park_id"], name: "index_trails_on_park_id"
   end
