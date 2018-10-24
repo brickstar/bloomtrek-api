@@ -6,7 +6,7 @@ class CreateTrails < ActiveRecord::Migration[5.2]
       t.integer :status
       t.string :trail_img_url
       t.string :trail_url
-      t.references :parks, foreign_key: true
+      t.references :park, foreign_key: true
     end
   end
 end

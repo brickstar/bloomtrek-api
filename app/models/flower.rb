@@ -1,4 +1,4 @@
-class Flower
+class Flower < ApplicationRecord
   validates_presence_of :common_name,
                         :scientific_name,
                         :flower_img_url,
