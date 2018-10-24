@@ -6,6 +6,15 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'simplecov'
+require 'webmock/rspec'
+require 'vcr'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data('<key>') { ENV["HIKING_PROJECT_KEY"] }
+end
 
 SimpleCov.start 'rails' do
   add_filter "app/channels/application_cable/channel.rb"
