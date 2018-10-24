@@ -4,7 +4,7 @@ class ReiHikingProjectService
   end
 
   def trails(latitude, longitude)
-    get_url("/get-trails?lat=#{latitude}&lon=-#{longitude}&maxDistance=10&key=#{ENV["HIKING_PROJECT_KEY"]}")
+    get_url("/data/get-trails?lat=#{latitude}&lon=#{longitude}&maxDistance=10&key=#{ENV["HIKING_PROJECT_KEY"]}")
   end
 
   private

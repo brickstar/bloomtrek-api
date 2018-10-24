@@ -1,6 +1,7 @@
 class Trail < ApplicationRecord
   def self.from_api(data)
     where(uid: data.uid).first_or_initialize.tap do |trail|
+      trail.name = data.name
       trail.uid = data.uid
       trail.difficulty = data.difficulty
       trail.length = data.length
@@ -14,14 +15,6 @@ class Trail < ApplicationRecord
     end
   end
 
-  def convert_difficulty
-
-  end
-
-  def convert_status
-
-  end
-
   validates_presence_of :difficulty,
                         :length,
                         :status,
@@ -30,7 +23,8 @@ class Trail < ApplicationRecord
                         :uid,
                         :latitude,
                         :longitude,
-                        :summary
+                        :summary,
+                        :name
 
   belongs_to :park
   has_many :flowers, through: :park

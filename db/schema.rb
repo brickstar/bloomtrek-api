@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_215052) do
   end
 
   create_table "trails", force: :cascade do |t|
+    t.string "name"
     t.integer "uid"
     t.string "difficulty"
     t.float "length"

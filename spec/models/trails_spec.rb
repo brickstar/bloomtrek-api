@@ -11,6 +11,7 @@ RSpec.describe Trail, type: :model do
     it { should validate_presence_of(:latitude) }
     it { should validate_presence_of(:longitude) }
     it { should validate_presence_of(:summary) }
+    it { should validate_presence_of(:name) }
   end
 
   context "relationships" do
