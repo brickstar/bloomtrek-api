@@ -43,4 +43,10 @@ describe "Parks API" do
     expect(park[0]).to have_key(:longitude)
     expect(park.count).to eq(3)
   end
+
+  it "sends a 404 if park is not found" do
+    get "/api/v1/parks/100/trails"
+
+    expect(response).to eq(404)
+  end
 end
