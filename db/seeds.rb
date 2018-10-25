@@ -110,7 +110,6 @@ rhps.trails(south_valley_open_space.latitude, south_valley_open_space.longitude)
 end
 
 teller_county = Park.create!(name:"Teller County", latitude: 38.9111, longitude: -105.0518)
-
 rhps.trails(teller_county.latitude, teller_county.longitude)[:trails].each do |trail|
   teller_county.trails.from_api(trail)
 end
