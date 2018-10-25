@@ -1,19 +1,13 @@
 rhps = ReiHikingProjectService.new
 
 Park.destroy_all
+Trail.destroy_all
 
 park_1 = Park.create!(name:"Castlewood Canyon", latitude: 39.3379, longitude: -104.7512)
 
 rhps.trails(park_1.latitude, park_1.longitude)[:trails].each do |trail|
   park_1.trails.from_api(trail)
 end
-
-# lots of missing images here - maybe we should just remove?
-# custer_county = Park.create!(name:"Custer County", latitude: 38.1072, longitude: -105.3543)
-#
-# rhps.trails(custer_county.latitude, custer_county.longitude)[:trails].each do |trail|
-#   custer_county.trails.from_api(trail)
-# end
 
 deer_creek_canyon = Park.create!(name:"Deer Creek Canyon", latitude: 39.5420, longitude: -105.1491)
 

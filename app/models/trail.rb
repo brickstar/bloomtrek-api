@@ -22,11 +22,11 @@ class Trail < ApplicationRecord
                         :status,
                         :trail_img_url,
                         :trail_url,
-                        :uid,
+                        :uid, uniqueness: true
                         :latitude,
                         :longitude,
                         :summary,
-                        :name
+                        :name  
 
   belongs_to :park
   has_many :flowers, through: :park

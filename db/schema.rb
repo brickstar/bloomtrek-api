@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_215052) do
     t.integer "uid"
     t.string "difficulty"
     t.float "length"
-    t.integer "status"
+    t.string "status"
     t.string "trail_img_url"
     t.string "trail_url"
     t.string "summary"
