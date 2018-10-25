@@ -41,21 +41,6 @@ describe "Parks API" do
     expect(park[0]).to have_key(:summary)
     expect(park[0]).to have_key(:latitude)
     expect(park[0]).to have_key(:longitude)
-    # expect(park[0][:trails].count).to eq(3)
+    expect(park.count).to eq(3)
   end
 end
-
-# [
-#       {
-#          name: "name",
-#          uid: "uid"
-#          difficulty: "difficulty"
-#          length: "length"
-#          status: "status"
-#          trail_img_url: "trail_img_url"
-#          trail_url: "trail_url"
-#          summary: "summary"
-#          latitude: "latitude"
-#          longitude: "longitude"
-#    }
-# ]
