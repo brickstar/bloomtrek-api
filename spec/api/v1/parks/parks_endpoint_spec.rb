@@ -17,12 +17,3 @@ describe "Parks API" do
     expect(park).to have_key(:longitude)
   end
 end
-
-
-  # [
-  #   {
-  #      name: <name>,
-  #      latitude: <lat>,
-  #      longitude: <long>,
-  #   }
-  # ]
