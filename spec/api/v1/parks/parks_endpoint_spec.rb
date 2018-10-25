@@ -4,6 +4,10 @@ describe "Parks API" do
   before(:each) do
     @parks = create_list(:park, 3)
     @park = @parks.first
+    @trail1 = create(:trail, park_id: @park.id)
+    @trail2 = create(:trail, park_id: @park.id)
+    @trail3 = create(:trail, park_id: @park.id)
+    binding.pry
   end
 
   it "sends a list of parks" do
