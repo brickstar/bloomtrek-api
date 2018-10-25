@@ -1,5 +1,7 @@
 rhps = ReiHikingProjectService.new
 
+Park.destroy_all
+
 park_1 = Park.create!(name:"Castlewood Canyon", latitude: 39.3379, longitude: -104.7512)
 
 rhps.trails(park_1.latitude, park_1.longitude)[:trails].each do |trail|
