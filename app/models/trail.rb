@@ -1,6 +1,8 @@
 class Trail < ApplicationRecord
   def self.from_api(data)
     where(uid: data[:id]).first_or_initialize.tap do |trail|
+      next if data[:imgMedium].empty?
+      next if data[:summary].empty?
       trail.name = data[:name]
       trail.uid = data[:id]
       trail.difficulty = data[:difficulty]
