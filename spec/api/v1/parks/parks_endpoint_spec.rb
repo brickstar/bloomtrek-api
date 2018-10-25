@@ -47,6 +47,6 @@ describe "Parks API" do
   it "sends a 404 if park is not found" do
     get "/api/v1/parks/100/trails"
 
-    expect(response).to eq(404)
+    expect(response.status).to eq(404)
   end
 end
