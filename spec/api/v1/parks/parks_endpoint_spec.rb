@@ -7,7 +7,6 @@ describe "Parks API" do
     @trail1 = create(:trail, park_id: @park.id)
     @trail2 = create(:trail, park_id: @park.id)
     @trail3 = create(:trail, park_id: @park.id)
-    binding.pry
   end
 
   it "sends a list of parks" do
