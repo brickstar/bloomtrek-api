@@ -8,6 +8,8 @@ RSpec.describe Flower, type: :model do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:bloom_start) }
     it { should validate_presence_of(:bloom_end) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:habitat) }
   end
 
   describe "relationships" do
