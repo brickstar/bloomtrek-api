@@ -17,16 +17,17 @@ class Trail < ApplicationRecord
     end
   end
 
+  validates_presence_of :uid, uniqueness: true
+
   validates_presence_of :difficulty,
                         :length,
                         :status,
                         :trail_img_url,
                         :trail_url,
-                        :uid, uniqueness: true
                         :latitude,
                         :longitude,
                         :summary,
-                        :name  
+                        :name
 
   belongs_to :park
   has_many :flowers, through: :park

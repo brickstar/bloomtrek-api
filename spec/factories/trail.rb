@@ -5,7 +5,7 @@ FactoryBot.define do
     uid { 1234567 }
     difficulty { "blue" }
     length { 4.6 }
-    status { 0 }
+    status { "All clear" }
     trail_img_url { "www.example.jpg" }
     trail_url { "www.example.com" }
     summary { "this is so ___!" }
