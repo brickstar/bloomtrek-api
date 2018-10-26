@@ -10,7 +10,6 @@ describe "Parks API" do
   end
 
   it "sends a list of parks" do
-
     get '/api/v1/parks'
 
     expect(response).to be_successful
