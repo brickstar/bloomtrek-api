@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2018_10_26_010309) do
     t.string "scientific_name"
     t.string "flower_img_url"
     t.string "description"
-    t.date "bloom_start"
-    t.date "bloom_end"
+    t.integer "bloom_start"
+    t.integer "bloom_end"
     t.string "name"
     t.string "habitat"
   end
