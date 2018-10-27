@@ -119,30 +119,66 @@ rhps.trails(vail_nature_center.latitude, vail_nature_center.longitude)[:trails].
   vail_nature_center.trails.from_api(trail)
 end
 
-CSV.foreach('./db/data/Castlewood_Canyon_flowers.csv', headers: true, header_converters: :symbol) do |row|
-  flower = Flower.find_or_create_by(
-                            flower_img_url: row[0],
-                            name: row[1],
-                            common_name: row[2],
-                            scientific_name: row[3],
-                            description: row[4],
-                            bloom_start: row[5],
-                            bloom_end: row[6],
-                            habitat: row[7]
-                          )
-  ParkFlower.create(park_id: park_1.id, flower_id: flower.id)
+def seed_flower_data(csv_file, park)
+  CSV.foreach("./#{csv_file}", headers: true, header_converters: :symbol) do |row|
+    flower = Flower.find_or_create_by(
+                              flower_img_url: row[0],
+                              name: row[1],
+                              common_name: row[2],
+                              scientific_name: row[3],
+                              description: row[4],
+                              bloom_start: row[5],
+                              bloom_end: row[6],
+                              habitat: row[7]
+                            )
+    ParkFlower.create(park_id: park.id, flower_id: flower.id)
+  end
 end
 
-CSV.foreach('./db/data/Deer_Creek_Open_Space_Park_flowers.csv', headers: true, header_converters: :symbol) do |row|
-  flower = Flower.find_or_create_by(
-                            flower_img_url: row[0],
-                            name: row[1],
-                            common_name: row[2],
-                            scientific_name: row[3],
-                            description: row[4],
-                            bloom_start: row[5],
-                            bloom_end: row[6],
-                            habitat: row[7]
-                          )
-  ParkFlower.create(park_id: deer_creek_canyon.id, flower_id: flower.id)
-end
+seed_flower_data("db/data/Castlewood_Canyon_flowers.csv", park_1)
+seed_flower_data("db/data/Deer_Creek_Open_Space_Park_flowers.csv", deer_creek_canyon)
+seed_flower_data("db/data/Golden_Gate_Canyon_flowers.csv", golden_gate_canyon)
+seed_flower_data("db/data/Guanella_Pass_flowers.csv", guanella_pass)
+seed_flower_data("db/data/Hayden_Park_on_Green_Mountain_flowers.csv", hayden_park)
+seed_flower_data("db/data/Lair_O_the_Bear_flowers.csv", lair_o_the_bair)
+seed_flower_data("db/data/Lookout_Mountain_Nature_Center_flowers.csv", lookout_mountain)
+seed_flower_data("db/data/Loveland_Pass_flowers.csv", loveland_pass)
+seed_flower_data("db/data/Maloit_Park_flowers.csv", maloit)
+seed_flower_data("db/data/Mesa_County_flowers.csv", mesa_county)
+seed_flower_data("db/data/Mount_Falcon_Open_SpacePark_flowers.csv", mount_falcon)
+seed_flower_data("db/data/No_Name_Creek_flowers.csv", no_name_creek)
+seed_flower_data("db/data/Plains_Conservation_Center_flowers.csv", plains_conservation_center)
+seed_flower_data("db/data/Reynolds_Open_Space_Park_flowers.csv", reynolds_open_space)
+seed_flower_data("db/data/Roxborough_State_Park_flowers.csv", roxborough_state_park)
+seed_flower_data("db/data/South_Platte_Park_flowers.csv", south_platte_park)
+seed_flower_data("db/data/South_Valley_Open_Space_Park_flowers.csv", south_valley_open_space)
+seed_flower_data("db/data/Teller_County_flowers.csv", teller_county)
+seed_flower_data("db/data/Vail_Nature_Center_flowers.csv", vail_nature_center)
+
+# CSV.foreach('./db/data/Castlewood_Canyon_flowers.csv', headers: true, header_converters: :symbol) do |row|
+#   flower = Flower.find_or_create_by(
+#                             flower_img_url: row[0],
+#                             name: row[1],
+#                             common_name: row[2],
+#                             scientific_name: row[3],
+#                             description: row[4],
+#                             bloom_start: row[5],
+#                             bloom_end: row[6],
+#                             habitat: row[7]
+#                           )
+#   ParkFlower.create(park_id: park_1.id, flower_id: flower.id)
+# end
+#
+# CSV.foreach('./db/data/Deer_Creek_Open_Space_Park_flowers.csv', headers: true, header_converters: :symbol) do |row|
+#   flower = Flower.find_or_create_by(
+#                             flower_img_url: row[0],
+#                             name: row[1],
+#                             common_name: row[2],
+#                             scientific_name: row[3],
+#                             description: row[4],
+#                             bloom_start: row[5],
+#                             bloom_end: row[6],
+#                             habitat: row[7]
+#                           )
+#   ParkFlower.create(park_id: deer_creek_canyon.id, flower_id: flower.id)
+# end
