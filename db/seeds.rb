@@ -1,7 +1,9 @@
-rhps = ReiHikingProjectService.new
+require 'csv'
 
+rhps = ReiHikingProjectService.new
 Park.destroy_all
 Trail.destroy_all
+Flower.destroy_all
 
 park_1 = Park.create!(name:"Castlewood Canyon", latitude: 39.3379, longitude: -104.7512)
 
@@ -115,4 +117,32 @@ vail_nature_center = Park.create!(name:"Vail Nature Center", latitude: 39.6396, 
 
 rhps.trails(vail_nature_center.latitude, vail_nature_center.longitude)[:trails].each do |trail|
   vail_nature_center.trails.from_api(trail)
+end
+
+CSV.foreach('./db/data/Castlewood_Canyon_flowers.csv', headers: true, header_converters: :symbol) do |row|
+  flower = Flower.find_or_create_by(
+                            flower_img_url: row[0],
+                            name: row[1],
+                            common_name: row[2],
+                            scientific_name: row[3],
+                            description: row[4],
+                            bloom_start: row[5],
+                            bloom_end: row[6],
+                            habitat: row[7]
+                          )
+  ParkFlower.create(park_id: park_1.id, flower_id: flower.id)
+end
+
+CSV.foreach('./db/data/Deer_Creek_Open_Space_Park_flowers.csv', headers: true, header_converters: :symbol) do |row|
+  flower = Flower.find_or_create_by(
+                            flower_img_url: row[0],
+                            name: row[1],
+                            common_name: row[2],
+                            scientific_name: row[3],
+                            description: row[4],
+                            bloom_start: row[5],
+                            bloom_end: row[6],
+                            habitat: row[7]
+                          )
+  ParkFlower.create(park_id: deer_creek_canyon.id, flower_id: flower.id)
 end
