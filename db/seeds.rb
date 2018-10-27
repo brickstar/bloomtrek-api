@@ -154,31 +154,3 @@ seed_flower_data("db/data/South_Platte_Park_flowers.csv", south_platte_park)
 seed_flower_data("db/data/South_Valley_Open_Space_Park_flowers.csv", south_valley_open_space)
 seed_flower_data("db/data/Teller_County_flowers.csv", teller_county)
 seed_flower_data("db/data/Vail_Nature_Center_flowers.csv", vail_nature_center)
-
-# CSV.foreach('./db/data/Castlewood_Canyon_flowers.csv', headers: true, header_converters: :symbol) do |row|
-#   flower = Flower.find_or_create_by(
-#                             flower_img_url: row[0],
-#                             name: row[1],
-#                             common_name: row[2],
-#                             scientific_name: row[3],
-#                             description: row[4],
-#                             bloom_start: row[5],
-#                             bloom_end: row[6],
-#                             habitat: row[7]
-#                           )
-#   ParkFlower.create(park_id: park_1.id, flower_id: flower.id)
-# end
-#
-# CSV.foreach('./db/data/Deer_Creek_Open_Space_Park_flowers.csv', headers: true, header_converters: :symbol) do |row|
-#   flower = Flower.find_or_create_by(
-#                             flower_img_url: row[0],
-#                             name: row[1],
-#                             common_name: row[2],
-#                             scientific_name: row[3],
-#                             description: row[4],
-#                             bloom_start: row[5],
-#                             bloom_end: row[6],
-#                             habitat: row[7]
-#                           )
-#   ParkFlower.create(park_id: deer_creek_canyon.id, flower_id: flower.id)
-# end
