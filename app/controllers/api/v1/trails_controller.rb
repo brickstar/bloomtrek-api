@@ -1,10 +1,8 @@
 class Api::V1::TrailsController < ApplicationController
+  before_action :validate_park, only: [:index]
+
   def index
     park = Park.find_by(id: params[:park_id])
-    if park
-      render json: park.trails
-    else
-      render status: 404
-    end
+    render json: park.trails
   end
 end
