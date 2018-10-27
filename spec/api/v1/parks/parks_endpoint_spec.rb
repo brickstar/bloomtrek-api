@@ -43,6 +43,26 @@ describe "Parks API" do
     expect(park.count).to eq(3)
   end
 
+  it "sends a single park and its associated flowers" do
+    get "/api/v1/parks/#{@parks.first.id}/flowers"
+
+    expect(response).to be_successful
+
+    flowers = JSON.parse(response.body, symbolize_names: true)
+    flower = flowers.first
+
+    expect(flowers).to be_a(Array)
+    expect(flower).to have_key(:id)
+    expect(flower).to have_key(:common_name)
+    expect(flower).to have_key(:scientific_name)
+    expect(flower).to have_key(:flower_img_url)
+    expect(flower).to have_key(:description)
+    expect(flower).to have_key(:bloom_start)
+    expect(flower).to have_key(:bloom_end)
+    expect(flower).to have_key(:name)
+    expect(flower).to have_key(:habitat)
+  end
+
   it "sends a 404 if park is not found" do
     get "/api/v1/parks/100/trails"
 
