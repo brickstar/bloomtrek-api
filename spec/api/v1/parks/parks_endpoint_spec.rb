@@ -23,8 +23,9 @@ describe "Parks API" do
 
     expect(parks.count).to eq(3)
     expect(park).to have_key(:name)
-    expect(park).to have_key(:latitude)
-    expect(park).to have_key(:longitude)
+    expect(park).to have_key(:coords)
+    expect(park[:coords]).to have_key(:latitude)
+    expect(park[:coords]).to have_key(:longitude)
   end
 
   it "sends a single park and its associated trails" do
