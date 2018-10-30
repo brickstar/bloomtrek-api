@@ -4,4 +4,8 @@ class ApplicationController < ActionController::API
       render status: 404
     end
   end
+
+  def validate_scrapper_params
+    render status: 404 unless params[:website] && params[:parkname]
+  end
 end
