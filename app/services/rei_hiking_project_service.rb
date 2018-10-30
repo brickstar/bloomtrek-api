@@ -8,7 +8,7 @@ class ReiHikingProjectService
   end
 
   def get_trails_by_id(trail_ids)
-    get_url("https://www.hikingproject.com/data/get-trails-by-id?ids=#{trail_ids}&key=#{ENV["HIKING_PROJECT_KEY"]}")
+    get_url("/data/get-trails-by-id?ids=#{trail_ids}&key=#{ENV["HIKING_PROJECT_KEY"]}")
   end
 
   private
