@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def validate_scrapper_params
-    render status: 404 unless params[:website] && params[:parkname]
+  def validate_scraper_params
+    render status: 404 unless params[:website] && params[:csv_file_name]
   end
 end
