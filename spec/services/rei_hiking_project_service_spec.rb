@@ -33,5 +33,19 @@ describe ReiHikingProjectService do
         end
       end
     end
+    describe '#get_trails_by_id' do
+      it "returns all trails by id" do
+        VCR.use_cassette("rei_hiking_project_service_get_trails_by_id") do
+          uids = "7012904,7011142,7055272,7006829,7024419,7010867,7003096,7006771,7027384,7003101"
+          rhps = ReiHikingProjectService.new
+
+          trails = rhps.get_trails_by_id(uids)[:trails]
+
+          expect(trails).to be_a(Array)
+          expect(trails.length).to eq(10)
+          expect(trails.first).to have_key(:conditionStatus)
+        end
+      end
+    end
   end
 end
