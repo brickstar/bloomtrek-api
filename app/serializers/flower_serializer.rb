@@ -18,6 +18,6 @@ class FlowerSerializer < ActiveModel::Serializer
   end
 
   def scientific_name
-    object.scientific_name.titleize
+    object.scientific_name.capitalize
   end
 end
