@@ -1,5 +1,5 @@
 class TrailSerializer < ActiveModel::Serializer
-  attributes :id, :name, :uid, :difficulty, :length, :status, :trail_img_url, :trail_url, :summary, :latitude, :longitude, :park_id
+  attributes :id, :name, :uid, :difficulty, :length, :status, :trail_img_url, :trail_url, :summary, :park_id, :coords
 
   def difficulty
     difficulty = object.difficulty.downcase
@@ -10,5 +10,12 @@ class TrailSerializer < ActiveModel::Serializer
     elsif difficulty == "black" || difficulty == "blackblack"
       return "hard"
     end
+  end
+
+  def coords
+    {
+      latitude: object.latitude,
+      longitude: object.longitude
+    }
   end
 end
