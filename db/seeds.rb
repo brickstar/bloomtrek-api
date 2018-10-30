@@ -121,6 +121,7 @@ end
 
 def seed_flower_data(csv_file, park)
   CSV.foreach("./#{csv_file}", headers: true, header_converters: :symbol) do |row|
+    binding.pry
     flower = Flower.find_or_create_by(
                               flower_img_url: row[0],
                               name: row[1],
