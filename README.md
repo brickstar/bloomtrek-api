@@ -123,27 +123,27 @@ Frontend Developers: [Laura Whitaker](https://github.com/laurakwhit) and [Chris]
 
 #### by e.e. cummings
 
-somewhere i have never travelled,gladly beyond
-any experience,your eyes have their silence:
-in your most frail gesture are things which enclose me,
-or which i cannot touch because they are too near
+somewhere i have never travelled,gladly beyond<br/>
+any experience,your eyes have their silence:<br/>
+in your most frail gesture are things which enclose me,<br/>
+or which i cannot touch because they are too near<br/>
 
-your slightest look easily will unclose me
-though i have closed myself as fingers,
-you open always petal by petal myself as Spring opens
-(touching skilfully,mysteriously)her first rose
+your slightest look easily will unclose me<br/>
+though i have closed myself as fingers,<br/>
+you open always petal by petal myself as Spring opens<br/>
+(touching skilfully,mysteriously)her first rose<br/>
 
-or if your wish be to close me,i and
-my life will shut very beautifully,suddenly,
-as when the heart of this flower imagines
-the snow carefully everywhere descending;
+or if your wish be to close me,i and<br/>
+my life will shut very beautifully,suddenly,<br/>
+as when the heart of this flower imagines<br/>
+the snow carefully everywhere descending;<br/>
 
-nothing which we are to perceive in this world equals
-the power of your intense fragility:whose texture
-compels me with the colour of its countries,
-rendering death and forever with each breathing
+nothing which we are to perceive in this world equals<br/>
+the power of your intense fragility:whose texture<br/>
+compels me with the colour of its countries,<br/>
+rendering death and forever with each breathing<br/>
 
-(i do not know what it is about you that closes
-and opens;only something in me understands
-the voice of your eyes is deeper than all roses)
-nobody,not even the rain,has such small hands
+(i do not know what it is about you that closes<br/>
+and opens;only something in me understands<br/>
+the voice of your eyes is deeper than all roses)<br/>
+nobody,not even the rain,has such small hands<br/>
