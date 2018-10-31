@@ -40,7 +40,7 @@ Returns all parks currently in the database
 
 Each individual park will be returned in the following format:
 
-```
+```json
 {
 	"id": 1,
 	"name": "Castlewood Canyon",
@@ -57,7 +57,7 @@ Returns all trails associated/near park in the database.
 
 Each trail will be returned in the following format:
 
-```
+```json
 {
 	"id": 1,
 	"name": "Castlewood Canyon - Rimrock to Creek Bottom Loop",
@@ -83,7 +83,7 @@ Returns all flowers currently in bloom associated/near park in the database.
 
 Each flower will be returned in the following format:
 
-```
+```json
 {
 	"id": 1,
 	"flower_img_url": "http://extension.colostate.edu/county/jeffco/natural/plant_images/adenolinum_lewisii_1_378x400.jpg",
