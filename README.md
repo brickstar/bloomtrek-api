@@ -107,7 +107,7 @@ If the park can not be found a `404` will be returned.
 
 SPECIAL NOTE: This is an end point built to utilize a micro service built solely for scraping data from the CSU extension database. It will only accept web addresses from the plant database, like: `https://coloradoplants.jeffco.us/parksearch.do?name=12&parkname=Custer+County+`
 
-The output is a CSV file with the scrapped data! How neat is that! You can check out the API responsible for this scraping [here](https://github.com/KeeganCorrigan/bloomtrek_scraper). And it's deployed at: 
+The output is a CSV file with the scraped data! How neat is that! You can check out the API responsible for this scraping [here](https://github.com/KeeganCorrigan/bloomtrek_scraper). And it's deployed at: 
 
 #### https://bloomtrek-api-scraper.herokuapp.com/
 
@@ -117,7 +117,7 @@ Backend Developers: [Matt Bricker](https://github.com/brickstar) and [Keegan Cor
 
 Frontend Developers: [Laura Whitaker](https://github.com/laurakwhit) and [Chris](https://github.com/chrisboylen)
 
--
+-------
 
 *somewhere i have never travelled,gladly beyond*
 
