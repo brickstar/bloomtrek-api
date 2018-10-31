@@ -2,11 +2,7 @@ require "rails_helper"
 
 describe "Flowers API" do
   before(:each) do
-    @parks = create_list(:park, 3)
-    @park = @parks.first
-    @trail1 = create(:trail, park_id: @park.id, difficulty: "green")
-    @trail2 = create(:trail, park_id: @park.id, difficulty: "black")
-    @trail3 = create(:trail, park_id: @park.id)
+    @park = create(:park)
     @flower1 = create(:flower)
     @flower2 = create(:flower)
     @flower3 = create(:flower)
@@ -16,7 +12,7 @@ describe "Flowers API" do
 
   describe "GET /api/v1/parks/:id/flowers" do
     it "sends flowers if month passed in is between start and end bloom" do
-      get "/api/v1/parks/#{@parks.first.id}/flowers", params: { :month => 6 }
+      get "/api/v1/parks/#{@park.id}/flowers", params: { :month => 6 }
       expect(response).to be_successful
 
       flowers = JSON.parse(response.body, symbolize_names: true)
@@ -35,7 +31,7 @@ describe "Flowers API" do
     end
 
     it "does not send flowers if month passed in is NOT between start and end bloom" do
-      get "/api/v1/parks/#{@parks.first.id}/flowers", params: { :month => 12 }
+      get "/api/v1/parks/#{@park.id}/flowers", params: { :month => 12 }
       expect(response).to be_successful
 
       flowers = JSON.parse(response.body, symbolize_names: true)
@@ -45,11 +41,6 @@ describe "Flowers API" do
 
     it "sends a 404 if park is not found for flowers" do
       get "/api/v1/parks/100/flowers"
-      expect(response.status).to eq(404)
-    end
-
-    it "sends a 404 if park is not found for trails" do
-      get "/api/v1/parks/100/trails"
       expect(response.status).to eq(404)
     end
   end
