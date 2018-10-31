@@ -32,8 +32,6 @@ Check out the [Swagger documentation](https://app.swaggerhub.com/apis-docs/Bloom
     * `$ rails s`
     * If you want to run a local test suite `$ rspec` otherwise you can open up `localhost:3000` in your browser and try a route!
 
- ## End Points
-
 ## End Points
 
 1. `GET /api/v1/parks`
