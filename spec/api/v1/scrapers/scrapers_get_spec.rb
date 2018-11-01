@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Flower Scraper API" do
-  describe "get /api/v1/flower-scraper?website=<website>" do
+  describe "GET /api/v1/flower-scraper?website=<website>" do
     it "generates a csv file with the parameter name" do
       VCR.use_cassette("flower_scraper_csv_generator") do
         plant_website = "https://coloradoplants.jeffco.us/parksearch.do?name=11&parkname=Castlewood+Canyon+"
