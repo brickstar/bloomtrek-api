@@ -10,8 +10,3 @@ before_script:
 - bundle exec rake db:migrate
 notifications:
   email: false
-deploy:
-  provider: heroku
-  app: bloom-trek-api
-  api_key:
-    secure: AvxvGv+BV4dcn5WerTHF3Z0AbAHYeyC3u2rXCHAtxGNhZk1VpTLndtva9ukPdpQgdkBIapxoSkmDFSEofvsz/9UIt7Eu2ao9cacJvD/+NxmHeFeEDJKSCvkI76wEdo1xaP5BnmIvuDHKXoSJBGtA44VYESQKs7pQpp31Sn+ECYXPDEPp/5gllYVnXpcl0RndIo0bf1MFlaLO3XiHPREkq/oiZBis6hGKTEWeAx461fWoFjcyLmkTcig3M0v+bz2/1A/dWg9+L9/Lt5MoNEsTleaB/2EFGLmda4+gO63lhISSh9b5kDk4Ur/sp41mMvk8szrDZ2WV6lka7nldSFJaM46gwKcJIz1FaNcbAKnhHLZZy9gKDPYeUx27T7gKNm4PzgRZwVLxQOzbMrzDnq/SoLaNtShNewOJTmCEMn/orJ46EVWgJc5tCt532N9/kR4drIUkhv4TBsnUHoT0LTeQNIyV5fdOIS/z9LwNRvvNEsueHvZRWb/FZTB636sFtaWSXe/KlR6qn/JgQVnohIfjs90pAL9sRJkG2weJzZETgFEgKDnjzDf6Kg42ANOHBgIi4h4E5yhwZwt05UhG9NOq/CN9rsgP5EjGKOaDHXQyMM2X4ii94cJGX4RW6KyM9hqwG+cMVuLwS2tS18gk7TqdENUEV33rh9xEPTE5AGxXfQY=
